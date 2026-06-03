@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly - Secure Corporate Enterprise Banking</title>
+    <meta name="description"
+        content="Stackly delivers next-generation secure digital banking solutions with AI-powered fraud detection, cloud banking infrastructure, and real-time global processing.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ===== MAIN NAVIGATION HEADER ===== -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="#" class="logo-wrapper" data-page="stackly">
+                <img src="photos/logo.webp" alt="Stackly Logo" class="header-logo" />
+            </a>
+
+            <nav class="desktop-nav">
+                <a href="#hero" class="nav-link active" data-page="home">Home</a>
+                <a href="#" class="nav-link" data-page="features">Features</a>
+                <a href="#" class="nav-link" data-page="stackly">Stackly</a>
+                <a href="#" class="nav-link" data-page="services">Services</a>
+                <a href="#" class="nav-link" data-page="contact">Contact</a>
+            </nav>
+
+            <div class="desktop-auth">
+                <button class="btn-login" id="login-btn" data-page="login">
+                    <i class="fa-solid fa-right-to-bracket"></i> Login
+                </button>
+            </div>
+
+            <button id="menu-btn" class="mobile-menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="mobile-drawer hidden">
+            <a href="#hero" data-page="home">Home</a>
+            <a href="#" data-page="features">Features</a>
+            <a href="#" data-page="why-us">Why Us</a>
+            <a href="#" data-page="services">Services</a>
+            <a href="#" data-page="contact">Contact</a>
+            <div class="mobile-auth-wrapper">
+                <button class="btn-login-mobile" data-page="login">
+                    <i class="fa-solid fa-right-to-bracket"></i> Login
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== 404 ERROR MODAL OVERLAY ===== -->
+    <div id="error-modal" class="error-modal-overlay hidden">
+        <!-- Floating particles backdrop -->
+        <div class="error-particles-container" id="error-particles"></div>
+
+        <!-- Glowing aura behind the card -->
+        <div class="error-card-glow"></div>
+
+        <div class="error-modal-card">
+            <a href="index.html" class="logo-wrapper" style="margin-bottom: 2rem; justify-content: center; z-index: 10;">
+                <img src="photos/logo.webp" alt="Stackly Logo" class="header-logo" />
+            </a>
+            <button class="error-modal-close" id="error-close-btn">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="error-glitch-wrapper">
+                <span class="error-404-text" data-text="404">404</span>
+            </div>
+            <div class="error-icon-pulse">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+            <h2 class="error-title">Page Not Found</h2>
+            <p class="error-desc">The page you're looking for doesn't exist yet. We're working hard to build something
+                amazing. Stay tuned!</p>
+            <div class="error-meta">
+                <span><i class="fa-solid fa-clock"></i> Coming Soon</span>
+                <span><i class="fa-solid fa-code"></i> Under Development</span>
+            </div>
+            <button class="btn-error-home" id="error-home-btn">
+                <i class="fa-solid fa-house"></i> Back to Home
+            </button>
+        </div>
+    </div>
+
+    <!-- ===== MAIN CONTENT AREA ===== -->
+    <main class="content-wrapper">
+
+        <!-- ===== HERO SECTION WITH VIDEO ===== -->
+        <section id="hero" class="app-section hero-layout">
+            <!-- Background Image Slideshow -->
+            <div class="hero-slider-bg">
+                <div class="hero-slide active"
+                    style="background-image: url('https://images.unsplash.com/photo-1563013544-824ae1d704d3?auto=format&fit=crop&w=1920&q=80');">
+                </div>
+                <div class="hero-slide"
+                    style="background-image: url('https://images.unsplash.com/photo-1601597111158-2fceff292cdc?auto=format&fit=crop&w=1920&q=80');">
+                </div>
+                <div class="hero-slide"
+                    style="background-image: url('https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=1920&q=80');">
+                </div>
+                <div class="hero-slide"
+                    style="background-image: url('https://images.unsplash.com/photo-1501167786227-4cba60f6d58f?auto=format&fit=crop&w=1920&q=80');">
+                </div>
+                <div class="hero-video-overlay"></div>
+            </div>
+            <div class="section-container grid-2col hero-content-grid">
+                <div class="hero-text-block reveal-fade-up" data-aos="fade-up" data-aos-duration="800">
+                    <div class="badge">
+                        <i class="fa-solid fa-shield-halved"></i> Next-Gen Security Layer Enabled
+                    </div>
+                    <h1 class="hero-title" data-aos="fade-up" data-aos-duration="800">
+                        Secure Digital Banking <br>
+                        <span class="gradient-text">Solutions for the Future</span>
+                    </h1>
+                    <p class="section-desc hero-desc" data-aos="fade-up">
+                        Empower your financial journey with Stackly's modern fintech infrastructure. Experience
+                        real-time global processing protected by advanced quantum-grade security. Our platform handles
+                        millions of transactions daily with sub-millisecond latency, ensuring your money moves at the
+                        speed of thought across 150+ countries worldwide.
+                    </p>
+                    <div class="hero-stats-row">
+                        <div class="hero-stat-chip">
+                            <span class="hero-stat-num">15M+</span>
+                            <span class="hero-stat-label">Active Users</span>
+                        </div>
+                        <div class="hero-stat-chip">
+                            <span class="hero-stat-num">$48B+</span>
+                            <span class="hero-stat-label">Processed</span>
+                        </div>
+                        <div class="hero-stat-chip">
+                            <span class="hero-stat-num">99.99%</span>
+                            <span class="hero-stat-label">Uptime</span>
+                        </div>
+                    </div>
+                    <div class="hero-cta-group">
+                         <a href="404.html" class="btn-gradient">
+                             <i class="fa-solid fa-rocket"></i> Get Started Free
+                         </a>
+                         <a href="404.html" class="btn-outline">
+                             <i class="fa-solid fa-play"></i> Watch Demo
+                         </a>
+                    </div>
+                    <div class="hero-trust-badges">
+                        <span class="trust-label">Trusted by:</span>
+                        <div class="trust-logos">
+                            <span class="trust-item"><i class="fa-solid fa-building-columns"></i> 250+ Banks</span>
+<span class="trust-item"><i class="fa-solid fa-globe"></i> 150 Countries</span>
+<span class="trust-item"><i class="fa-solid fa-shield-halved"></i> SOC2 Certified</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image-block reveal-zoom-in" data-aos="zoom-in">
+                    <div class="glow-bg"></div>
+                    <div class="live-photo-container">
+                        <img src="hero-image.webp" alt="Stackly Secure Banking Dashboard" class="hero-img live-photo">
+                        <div class="live-overlay-elements">
+                            <div class="float-card float-card-1">
+                                <i class="fa-solid fa-arrow-trend-up"></i>
+                                <span>+24.5%</span>
+                            </div>
+                            <div class="float-card float-card-2">
+                                <i class="fa-solid fa-shield-check"></i>
+                                <span>Secured</span>
+                            </div>
+                            <div class="float-card float-card-3">
+                                <i class="fa-solid fa-bolt"></i>
+                                <span>0.02ms</span>
+                            </div>
+                        </div>
+                        <div class="pulse-ring pulse-ring-1"></div>
+                        <div class="pulse-ring pulse-ring-2"></div>
+                        <div class="pulse-ring pulse-ring-3"></div>
+                        <div class="particle particle-1"></div>
+                        <div class="particle particle-2"></div>
+                        <div class="particle particle-3"></div>
+                        <div class="particle particle-4"></div>
+                        <div class="particle particle-5"></div>
+                        <div class="particle particle-6"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== ABOUT / OVERVIEW SECTION ===== -->
+        <section id="about-section" class="app-section">
+            <div class="section-container">
+                <div class="section-header reveal-fade-up">
+                    <div class="section-badge">
+                        <i class="fa-solid fa-building-columns"></i> About Stackly
+                    </div>
+                    <h2>Redefining the Future of <span class="gradient-text">Digital Finance</span></h2>
+                    <p class="section-desc">Founded in 2019, Stackly has rapidly grown to become one of the most trusted
+                        names in enterprise fintech. We combine cutting-edge technology with deep financial expertise to
+                        deliver solutions that scale with your ambitions.</p>
+                </div>
+                <div class="grid-3col pt-40">
+                    <div class="about-card reveal-fade-up">
+                        <div class="about-number">01</div>
+                        <h3>Our Mission</h3>
+                        <p>To democratize access to enterprise-grade financial technology, making secure, fast, and
+                            intelligent banking solutions available to businesses of every size across the globe.</p>
+                    </div>
+                    <div class="about-card reveal-fade-up">
+                        <div class="about-number">02</div>
+                        <h3>Our Vision</h3>
+                        <p>A world where financial infrastructure is invisible yet omnipresent — where every transaction
+                            is instant, every account is secure, and every business has the tools to thrive in the
+                            digital economy.</p>
+                    </div>
+                    <div class="about-card reveal-fade-up">
+                        <div class="about-number">03</div>
+                        <h3>Our Values</h3>
+                        <p>We believe in radical transparency, relentless security, and user-first design. Every line of
+                            code we write is guided by our commitment to protect and empower our customers.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FEATURES PREVIEW SECTION ===== -->
+        <section id="features-preview" class="app-section alternate-bg">
+            <div class="section-container">
+                <div class="section-header reveal-fade-up">
+                    <div class="section-badge badge-teal">
+                        <i class="fa-solid fa-microchip"></i> Platform Features
+                    </div>
+                    <h2>Engineered for <span class="gradient-text">Maximum Performance</span></h2>
+                    <p class="section-desc">Multi-layered security paradigms running natively to safely process
+                        real-time assets with unmatched reliability and speed.</p>
+                </div>
+                <div class="grid-4col pt-40">
+                    <div class="glass-card reveal-fade-up">
+                        <div class="card-image-wrapper">
+                            <img src="photos/secure_transactions.webp" alt="Secure Transactions" class="card-image-img" />
+                        </div>
+                        <div class="card-icon icon-teal"><i class="fa-solid fa-vault"></i></div>
+                        <h3 class="card-title">Secure Transactions</h3>
+                        <p class="card-desc">End-to-end AES-256 encryption with multi-layered authentication protecting
+                            every single asset movement and transfer across all channels.</p>
+                        <div class="card-metric">
+                            <span class="metric-value">99.97%</span>
+                            <span class="metric-label">Fraud Prevention</span>
+                        </div>
+                    </div>
+                    <div class="glass-card reveal-fade-up">
+                        <div class="card-image-wrapper">
+                            <img src="photos/ai_fraud_detection.webp" alt="AI Fraud Detection" class="card-image-img" />
+                        </div>
+                        <div class="card-icon icon-navy"><i class="fa-solid fa-brain"></i></div>
+                        <h3 class="card-title">AI Fraud Detection</h3>
+                        <p class="card-desc">Machine learning behavioral models analyze transaction patterns in
+                            real-time, isolating anomalies and blocking threats before they escalate.</p>
+                        <div class="card-metric">
+                            <span class="metric-value">&lt;0.01s</span>
+                            <span class="metric-label">Detection Time</span>
+                        </div>
+                    </div>
+                    <div class="glass-card reveal-fade-up">
+                        <div class="card-image-wrapper">
+                            <img src="photos/cloud_banking.webp" alt="Cloud Banking" class="card-image-img" />
+                        </div>
+                        <div class="card-icon icon-teal-light"><i class="fa-solid fa-cloud"></i></div>
+                        <h3 class="card-title">Cloud Banking</h3>
+                        <p class="card-desc">Highly resilient multi-region cloud instances with automatic failover,
+                            maintaining continuous 99.99% uptime across global infrastructure.</p>
+                        <div class="card-metric">
+                            <span class="metric-value">99.99%</span>
+                            <span class="metric-label">Availability</span>
+                        </div>
+                    </div>
+                    <div class="glass-card reveal-fade-up">
+                        <div class="card-image-wrapper">
+                            <img src="photos/support_telephone.webp" alt="24/7 Operations" class="card-image-img" />
+                        </div>
+                        <div class="card-icon icon-slate"><i class="fa-solid fa-headset"></i></div>
+                        <h3 class="card-title">24/7 Operations</h3>
+                        <p class="card-desc">Dedicated technical response teams monitoring all systems around the clock
+                            with average incident response times under 30 seconds.</p>
+                        <div class="card-metric">
+                            <span class="metric-value">24/7</span>
+                            <span class="metric-label">Global Support</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SERVICES PREVIEW SECTION ===== -->
+        <section id="services-preview" class="app-section">
+            <div class="section-container">
+                <div class="section-header reveal-fade-up">
+                    <div class="section-badge badge-navy">
+                        <i class="fa-solid fa-layer-group"></i> Core Services
+                    </div>
+                    <h2>Comprehensive <span class="gradient-text">Financial Services</span></h2>
+                    <p class="section-desc">A unified environment purpose-built to execute individual retail
+                        transactions and complex corporate settlement operations with enterprise-grade reliability.</p>
+                </div>
+                <div class="grid-3col pt-40">
+                    <div class="service-card reveal-fade-up">
+                        <div class="card-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1621416894569-0f39ed31d247?auto=format&fit=crop&w=600&h=400&q=80"
+                                alt="Smart Wallets" class="card-image-img" />
+                        </div>
+                        <div class="service-icon-wrap icon-teal"><i class="fa-solid fa-wallet"></i></div>
+                        <h3>Smart Wallets</h3>
+                        <p>Unified multicurrency digital wallets with real-time FX conversion, supporting 40+ currencies
+                            with the most competitive exchange rates in the industry.</p>
+                        <a href="#" class="service-link" data-page="services">Learn more <i
+                                class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                    <div class="service-card reveal-fade-up">
+                        <div class="card-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=600&h=400&q=80"
+                                alt="Automated Investing" class="card-image-img" />
+                        </div>
+                        <div class="service-icon-wrap icon-navy"><i class="fa-solid fa-chart-line"></i></div>
+                        <h3>Automated Investing</h3>
+                        <p>AI-powered portfolio management with automated risk rebalancing, dividend reinvestment, and
+                            personalized strategies matched to your financial goals.</p>
+                        <a href="#" class="service-link" data-page="services">Learn more <i
+                                class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                    <div class="service-card reveal-fade-up">
+                        <div class="card-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=600&h=400&q=80"
+                                alt="Cross-Border Payments" class="card-image-img" />
+                        </div>
+                        <div class="service-icon-wrap icon-teal-light"><i class="fa-solid fa-money-bill-transfer"></i>
+                        </div>
+                        <h3>Cross-Border Payments</h3>
+                        <p>Near-instant international transfers with transparent pricing, executing transactions across
+                            borders within seconds instead of days.</p>
+                        <a href="#" class="service-link" data-page="services">Learn more <i
+                                class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                    <div class="service-card reveal-fade-up">
+                        <div class="card-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&h=400&q=80"
+                                alt="Institutional Custody" class="card-image-img" />
+                        </div>
+                        <div class="service-icon-wrap icon-slate"><i class="fa-solid fa-building-columns"></i></div>
+                        <h3>Institutional Custody</h3>
+                        <p>Enterprise-grade asset custody with multi-signature authorization, cold storage vaults, and
+                            real-time audit trails for complete regulatory compliance.</p>
+                        <a href="#" class="service-link" data-page="services">Learn more <i
+                                class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                    <div class="service-card reveal-fade-up">
+                        <div class="card-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&h=400&q=80"
+                                alt="Dynamic Invoicing" class="card-image-img" />
+                        </div>
+                        <div class="service-icon-wrap icon-navy"><i class="fa-solid fa-receipt"></i></div>
+                        <h3>Dynamic Invoicing</h3>
+                        <p>Automated invoice generation with integrated payment processing, tax calculation, and
+                            multi-jurisdiction compliance reporting built right in.</p>
+                        <a href="#" class="service-link" data-page="services">Learn more <i
+                                class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                    <div class="service-card reveal-fade-up">
+                        <div class="card-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1589758438368-0ad531db3366?auto=format&fit=crop&w=600&h=400&q=80"
+                                alt="Virtual Cards" class="card-image-img" />
+                        </div>
+                        <div class="service-icon-wrap icon-teal"><i class="fa-solid fa-credit-card"></i></div>
+                        <h3>Virtual Cards</h3>
+                        <p>Generate unlimited single-use or recurring virtual cards for secure online transactions,
+                            employee expenses, and vendor payments with granular spending controls.</p>
+                        <a href="#" class="service-link" data-page="services">Learn more <i
+                                class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== WHY CHOOSE US SECTION ===== -->
+        <section id="why-preview" class="app-section alternate-bg">
+            <div class="section-container grid-2col items-center">
+                <div class="why-content-wrapper reveal-fade-up">
+                    <div class="section-badge">
+                        <i class="fa-solid fa-star"></i> Why Choose Stackly
+                    </div>
+                    <h2>The Engine Behind <span class="gradient-text">Global Capital Flow</span></h2>
+                    <p class="section-desc">We establish core operational bridges connecting speed, security, and
+                        reliability — directly serving enterprises across 150+ countries with unmatched performance.</p>
+                    <div class="advantages-list">
+                        <div class="advantage-item">
+                            <div class="advantage-icon"><i class="fa-solid fa-bolt"></i></div>
+                            <div>
+                                <h4>Sub-Millisecond Clearances</h4>
+                                <p>Our proprietary clearing engine removes unnecessary banking pipeline layers to settle
+                                    assets in under 0.02ms — faster than any traditional banking system.</p>
+                            </div>
+                        </div>
+                        <div class="advantage-item">
+                            <div class="advantage-icon icon-navy"><i class="fa-solid fa-code"></i></div>
+                            <div>
+                                <h4>Developer-First API Design</h4>
+                                <p>Comprehensive RESTful and GraphQL APIs with SDKs for 12+ programming languages,
+                                    enabling seamless integration into your existing tech stack.</p>
+                            </div>
+                        </div>
+                        <div class="advantage-item">
+                            <div class="advantage-icon icon-teal"><i class="fa-solid fa-scale-balanced"></i></div>
+                            <div>
+                                <h4>Regulatory Compliance Built-In</h4>
+                                <p>Automated compliance with KYC/AML regulations across 150+ jurisdictions, keeping your
+                                    business safe and audit-ready at all times.</p>
+                            </div>
+                        </div>
+                        <div class="advantage-item">
+                            <div class="advantage-icon icon-slate"><i class="fa-solid fa-lock"></i></div>
+                            <div>
+                                <h4>Zero-Trust Security Architecture</h4>
+                                <p>Every request is authenticated, authorized, and encrypted. Our zero-trust model
+                                    ensures no implicit trust is ever granted, even within our internal network.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="why-image-wrapper reveal-zoom-in">
+                    <div class="why-visual-stack">
+                        <!-- AI Banking Background Image -->
+                        <div class="why-visual-stack-bg">
+                            <img src="photos/bank_ai_bg.webp" alt="AI Banking Background" class="stack-bg-img" />
+                        </div>
+                        <div class="why-stat-card why-stat-1">
+                            <div class="why-stat-icon"><i class="fa-solid fa-users"></i></div>
+                            <div class="why-stat-info">
+                                <span class="why-stat-number">15M+</span>
+                                <span class="why-stat-text">Active Users</span>
+                            </div>
+                        </div>
+                        <div class="why-stat-card why-stat-2">
+                            <div class="why-stat-icon"><i class="fa-solid fa-globe"></i></div>
+                            <div class="why-stat-info">
+                                <span class="why-stat-number">150+</span>
+                                <span class="why-stat-text">Countries</span>
+                            </div>
+                        </div>
+                        <div class="why-stat-card why-stat-3">
+                            <div class="why-stat-icon"><i class="fa-solid fa-chart-pie"></i></div>
+                            <div class="why-stat-info">
+                                <span class="why-stat-number">$48B+</span>
+                                <span class="why-stat-text">Processed</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== REAL-TIME METRICS SECTION ===== -->
+        <section id="stats" class="app-section stats-bg">
+            <div class="section-container">
+                <div class="section-header reveal-fade-up" style="margin-bottom: 3rem;">
+                    <h2>Stackly by the <span class="gradient-text">Numbers</span></h2>
+                    <p class="section-desc">Real-time metrics from our global infrastructure</p>
+                </div>
+                <div class="grid-4col text-center">
+                    <div class="stat-item reveal-fade-up">
+                        <div class="stat-icon-bg"><i class="fa-solid fa-users"></i></div>
+                        <div class="stat-number"><span class="counter" data-target="15">0</span>M+</div>
+                        <p class="stat-label label-teal">Active Global Users</p>
+                        <p class="stat-sublabel">Across 150+ countries</p>
+                    </div>
+                    <div class="stat-item reveal-fade-up">
+                        <div class="stat-icon-bg icon-navy"><i class="fa-solid fa-dollar-sign"></i></div>
+                        <div class="stat-number">$<span class="counter" data-target="48">0</span>B+</div>
+                        <p class="stat-label label-navy">Total Capital Processed</p>
+                        <p class="stat-sublabel">Last 12 months</p>
+                    </div>
+                    <div class="stat-item reveal-fade-up">
+                        <div class="stat-icon-bg icon-teal-light"><i class="fa-solid fa-mobile-screen"></i></div>
+                        <div class="stat-number"><span class="counter" data-target="9">0</span>M+</div>
+                        <p class="stat-label label-teal-light">Mobile App Users</p>
+                        <p class="stat-sublabel">iOS & Android</p>
+                    </div>
+                    <div class="stat-item reveal-fade-up">
+                        <div class="stat-icon-bg icon-slate"><i class="fa-solid fa-building-columns"></i></div>
+                        <div class="stat-number"><span class="counter" data-target="250">0</span>+</div>
+                        <p class="stat-label label-slate">Partner Banks</p>
+                        <p class="stat-sublabel">Global network</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== TESTIMONIALS SECTION ===== -->
+        <section id="testimonials" class="app-section alternate-bg">
+            <div class="section-container">
+                <div class="section-header reveal-fade-up">
+                    <div class="section-badge badge-navy">
+                        <i class="fa-solid fa-quote-left"></i> Client Testimonials
+                    </div>
+                    <h2>Trusted by Industry <span class="gradient-text">Leaders</span></h2>
+                    <p class="section-desc">See how enterprise teams leverage Stackly's infrastructure to transform
+                        their financial operations.</p>
+                </div>
+                <div class="testimonial-carousel reveal-fade-up">
+                    <div class="testimonial-track">
+                        <div class="glass-card testimonial-card testimonial-slide">
+                            <div class="testimonial-stars">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="testimonial-quote">"Migrating our settlement infrastructure to Stackly reduced our
+                                transaction latency by 40% and cut operational costs by $2.3M annually. The integration was seamless."</p>
+                            <div class="testimonial-user">
+                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&h=100&q=80"
+                                    alt="Sarah Jenkins" class="user-avatar" />
+                                <div>
+                                    <h5>Sarah Jenkins</h5>
+                                    <p class="user-role role-teal">CTO, EnterpriseScale</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="glass-card testimonial-card testimonial-slide">
+                            <div class="testimonial-stars">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="testimonial-quote">"The AI-powered fraud detection has been a game-changer. We've seen
+                                a 98.7% reduction in fraudulent transactions since implementing Stackly's security layer
+                                across our network."</p>
+                            <div class="testimonial-user">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&h=100&q=80"
+                                    alt="Marcus Chen" class="user-avatar" />
+                                <div>
+                                    <h5>Marcus Chen</h5>
+                                    <p class="user-role role-navy">Director of Risk, PayGlobal</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="glass-card testimonial-card testimonial-slide">
+                            <div class="testimonial-stars">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="testimonial-quote">"Stackly's cross-border payment rails have transformed our
+                                international operations. What used to take 3-5 business days now settles in under 10 seconds. Absolutely revolutionary."</p>
+                            <div class="testimonial-user">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&h=100&q=80"
+                                    alt="Elena Rostova" class="user-avatar" />
+                                <div>
+                                    <h5>Elena Rostova</h5>
+                                    <p class="user-role role-teal">VP Operations, NeoLedger</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Duplicated set for seamless loop -->
+                        <div class="glass-card testimonial-card testimonial-slide">
+                            <div class="testimonial-stars">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="testimonial-quote">"Migrating our settlement infrastructure to Stackly reduced our
+                                transaction latency by 40% and cut operational costs by $2.3M annually. The integration was seamless."</p>
+                            <div class="testimonial-user">
+                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&h=100&q=80"
+                                    alt="Sarah Jenkins" class="user-avatar" />
+                                <div>
+                                    <h5>Sarah Jenkins</h5>
+                                    <p class="user-role role-teal">CTO, EnterpriseScale</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="glass-card testimonial-card testimonial-slide">
+                            <div class="testimonial-stars">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="testimonial-quote">"The AI-powered fraud detection has been a game-changer. We've seen
+                                a 98.7% reduction in fraudulent transactions since implementing Stackly's security layer
+                                across our network."</p>
+                            <div class="testimonial-user">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&h=100&q=80"
+                                    alt="Marcus Chen" class="user-avatar" />
+                                <div>
+                                    <h5>Marcus Chen</h5>
+                                    <p class="user-role role-navy">Director of Risk, PayGlobal</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="glass-card testimonial-card testimonial-slide">
+                            <div class="testimonial-stars">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="testimonial-quote">"Stackly's cross-border payment rails have transformed our
+                                international operations. What used to take 3-5 business days now settles in under 10 seconds. Absolutely revolutionary."</p>
+                            <div class="testimonial-user">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&h=100&q=80"
+                                    alt="Elena Rostova" class="user-avatar" />
+                                <div>
+                                    <h5>Elena Rostova</h5>
+                                    <p class="user-role role-teal">VP Operations, NeoLedger</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CTA / CONTACT SECTION ===== -->
+        <section id="cta-section" class="app-section cta-layout">
+            <div class="section-container reveal-fade-up">
+                <div class="cta-inner-card">
+                    <div class="cta-badge">
+                        <i class="fa-solid fa-rocket"></i> Ready to Start?
+                    </div>
+                    <h2>Deploy Your Financial Infrastructure Today</h2>
+                    <p>Join 15M+ users and 250+ banks who trust Stackly to power their financial operations. Get started
+                        in minutes with our developer-friendly APIs and dedicated onboarding support.</p>
+                    <div class="cta-btn-wrapper">
+                        <button class="btn-cta-light">
+                            <i class="fa-solid fa-bolt"></i> Start Free Trial
+                        </button>
+                        <button class="btn-cta-dark" data-page="contact">
+                            <i class="fa-solid fa-phone"></i> Contact Sales
+                        </button>
+                    </div>
+                    <div class="cta-features">
+                        <span><i class="fa-solid fa-check"></i> No credit card required</span>
+                        <span><i class="fa-solid fa-check"></i> 14-day free trial</span>
+                        <span><i class="fa-solid fa-check"></i> Cancel anytime</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="main-footer">
+        <div class="section-container footer-grid">
+            <div class="footer-brand-column">
+                <div class="footer-logo">
+                    <a href="#" class="logo-wrapper" data-page="stackly">
+                        <img src="photos/logo.webp" alt="Stackly Logo" class="footer-logo-img" />
+                    </a>
+                </div>
+                <p>Deploying resilient network architectures built for secure, enterprise-tier capital transactions
+                    across the globe. Trusted by millions worldwide.</p>
+                <div class="footer-social-inline">
+                    <a href="#" aria-label="Facebook" data-page="social"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" aria-label="LinkedIn" data-page="social"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#" aria-label="GitHub" data-page="social"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" aria-label="Discord" data-page="social"><i class="fa-brands fa-discord"></i></a>
+                </div>
+            </div>
+            <div class="footer-links-column">
+                <h6>Quick Links</h6>
+                <a href="#hero">Home</a>
+                <a href="#" data-page="features">Features</a>
+                <a href="#" data-page="why-us">Why Us</a>
+                <a href="#" data-page="services">Services</a>
+                <a href="#" data-page="contact">Contact</a>
+            </div>
+            <div class="footer-links-column">
+                <h6>Company</h6>
+                <a href="#" data-page="why-us">About Us</a>
+                <a href="#" data-page="contact">Contact</a>
+                <a href="#" data-page="contact">Careers</a>
+                <a href="#" data-page="contact">Press Kit</a>
+            </div>
+            <div class="footer-links-column">
+                <h6>Legal</h6>
+                <a href="#" data-page="contact">Privacy Policy</a>
+                <a href="#" data-page="contact">Terms of Service</a>
+                <a href="#" data-page="contact">Cookie Policy</a>
+                <a href="#" data-page="contact">Compliance</a>
+            </div>
+            <div class="footer-map-column">
+                <h6>Map</h6>
+                <div class="footer-map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125026.0125432109!2d78.07722306233596!3d11.65609495471415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babf1ccf52c4175%3A0x6a6d67cf7564d26b!2sSalem%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1717387342939!5m2!1sen!2sin"
+                        width="100%" height="120" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade" title="Salem Stackly Map" class="footer-map-iframe">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-copyright section-container">
+            <p>&copy; 2026 Stackly Platforms Corp. All rights reserved.</p>
+            <p>Enterprise Financial Infrastructure Provider</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

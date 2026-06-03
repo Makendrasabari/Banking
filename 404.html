@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page Not Found – Stackly Banking</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0a0e1a, #020617);
+            color: #e0e0e0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            align-items: center;
+            justify-content: center;
+        }
+        .error-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+            width: 95%;
+        }
+        /* Particle container fills the page behind the content */
+        #error-particles {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Particle effect container -->
+    <div id="error-particles"></div>
+
+    <!-- Glowing background aura -->
+    <div class="error-card-glow" style="top: 50%; left: 50%; width: 600px; height: 600px;"></div>
+
+    <section class="error-container">
+        <a href="index.html" class="logo-wrapper" style="margin-bottom: 2rem; justify-content: center; z-index: 10;">
+            <img src="photos/logo.webp" alt="Stackly Logo" class="header-logo" />
+        </a>
+        <div class="error-glitch-wrapper">
+            <span class="error-404-text" data-text="404">404</span>
+        </div>
+        <div class="error-icon-pulse">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+        </div>
+        <h2 class="error-title">Page Not Found</h2>
+        <p class="error-desc">Oops! The page you’re looking for doesn’t exist or has been moved.</p>
+        <button class="btn-error-home" onclick="window.location.href='index.html'">
+            <i class="fa-solid fa-house"></i> Return Home
+        </button>
+    </section>
+
+    <script>
+        // Replicate the particle generation from the original modal
+        function spawnParticles() {
+            const container = document.getElementById('error-particles');
+            if (!container) return;
+            const count = 35;
+            for (let i = 0; i < count; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('error-particle');
+                const size = Math.random() * 24 + 6; // 6-30px
+                const left = Math.random() * 100;
+                const delay = Math.random() * 4;
+                const duration = Math.random() * 5 + 5;
+                const drift = Math.random() * 60 - 30;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${left}%`;
+                particle.style.animationDelay = `${delay}s`;
+                particle.style.animationDuration = `${duration}s`;
+                particle.style.setProperty('--drift', `${drift}px`);
+                container.appendChild(particle);
+            }
+        }
+        // Run on page load
+        document.addEventListener('DOMContentLoaded', spawnParticles);
+    </script>
+</body>
+</html>
