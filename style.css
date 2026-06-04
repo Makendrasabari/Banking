@@ -116,7 +116,7 @@ body.no-scroll {
 .section-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1.5rem;
+    padding: 0 1rem;
     width: 100%;
 }
 
@@ -204,7 +204,7 @@ body.no-scroll {
 .grid-2col {
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
-    gap: 4rem;
+    gap: 1rem;
 }
 
 .grid-3col {
@@ -276,6 +276,76 @@ body.no-scroll {
 /* ==========================================================================
    NAVIGATION HEADER
    ========================================================================== */
+
+/* Preloader transition */
+#preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* Preloader styling */
+#preloader {
+    position: fixed;
+    inset: 0;
+    background: var(--bg-main);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.6s;
+}
+
+.preloader-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.preloader-logo {
+    height: 4.5rem;
+    width: auto;
+    object-position: -9999px -9999px;
+    background: var(--grad-main);
+    -webkit-mask: url('photos/logo.webp') no-repeat center / contain;
+    mask: url('photos/logo.webp') no-repeat center / contain;
+    animation: preloaderPulse 1.8s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
+    filter: drop-shadow(0 0 15px rgba(91, 181, 181, 0.4));
+}
+
+.preloader-ring {
+    position: absolute;
+    width: 7.5rem;
+    height: 7.5rem;
+    border: 2px solid transparent;
+    border-top-color: rgba(91, 181, 181, 0.4);
+    border-bottom-color: rgba(142, 225, 195, 0.4);
+    border-radius: 50%;
+    animation: preloaderSpin 2s linear infinite;
+}
+
+@keyframes preloaderPulse {
+    0% {
+        transform: scale(0.92);
+        filter: drop-shadow(0 0 10px rgba(91, 181, 181, 0.3));
+    }
+    100% {
+        transform: scale(1.08);
+        filter: drop-shadow(0 0 30px rgba(142, 225, 195, 0.8));
+    }
+}
+
+@keyframes preloaderSpin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
 .main-header {
     position: fixed;
     top: var(--ticker-height);
@@ -1021,11 +1091,11 @@ body.no-scroll {
 
 .app-section {
     width: 100%;
-    min-height: 85vh;
+    min-height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 6rem 0;
+    padding: 4.5rem 0;
     border-bottom: 1px solid var(--border-base);
 }
 

@@ -15,7 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // ===== 404 Error Modal System =====
     // Collect all links/buttons that should trigger 404
-    const errorTriggerLinks = document.querySelectorAll('[data-page="features"], [data-page="why-us"], [data-page="services"], [data-page="contact"], [data-page="login"], [data-page="stackly"], [data-page="social"]');
+    const errorTriggerLinks = document.querySelectorAll('[data-page="features"], [data-page="why-us"], [data-page="services"], [data-page="contact"], [data-page="about"], [data-page="login"], [data-page="social"]');
+    const preloader = document.getElementById('preloader');
 
     function show404Modal(e) {
         e.preventDefault();
@@ -26,8 +27,15 @@ document.addEventListener("DOMContentLoaded", () => {
             mobileOverlayDrawerMenu.classList.add("hidden");
         }
 
-        // Redirect to full-page 404
-        window.location.href = "404.html";
+        // Show preloader transition
+        if (preloader) {
+            preloader.classList.remove("hidden");
+        }
+
+        // Redirect to full-page 404 after 1 second preloading transition
+        setTimeout(() => {
+            window.location.href = "404.html";
+        }, 1000);
     }
 
     function close404Modal() {
@@ -74,6 +82,8 @@ document.addEventListener("DOMContentLoaded", () => {
     errorTriggerLinks.forEach((link) => {
         link.addEventListener("click", show404Modal);
     });
+
+
 
     // Close modal handlers
     if (errorCloseBtn) {
@@ -272,4 +282,12 @@ document.addEventListener("DOMContentLoaded", () => {
     initializeHeroSlideshow();
     updateActiveNavigationLinkState();
     handleHeaderScroll();
+
+    // Hide preloader after full page load
+    window.addEventListener('load', () => {
+        const preloader = document.getElementById('preloader');
+        if (preloader) {
+            preloader.classList.add('hidden');
+        }
+    });
 });

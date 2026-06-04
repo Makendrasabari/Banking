@@ -15,20 +15,26 @@
 </head>
 
 <body>
+    <div id="preloader">
+        <div class="preloader-wrapper">
+            <div class="preloader-ring"></div>
+            <img src="photos/logo.webp" alt="Stackly Logo" class="preloader-logo" />
+        </div>
+    </div>
 
     <!-- ===== MAIN NAVIGATION HEADER ===== -->
     <header class="main-header">
-        <div class="header-container">
-            <a href="#" class="logo-wrapper" data-page="stackly">
+        <div class="header-container"> 
+            <a href="#hero" class="logo-wrapper">
                 <img src="photos/logo.webp" alt="Stackly Logo" class="header-logo" />
             </a>
 
             <nav class="desktop-nav">
                 <a href="#hero" class="nav-link active" data-page="home">Home</a>
-                <a href="#" class="nav-link" data-page="features">Features</a>
-                <a href="#" class="nav-link" data-page="stackly">Stackly</a>
-                <a href="#" class="nav-link" data-page="services">Services</a>
-                <a href="#" class="nav-link" data-page="contact">Contact</a>
+                <a href="#features-preview" class="nav-link" data-page="features">Features</a>
+                <a href="#about-section" class="nav-link" data-page="about">About</a>
+                <a href="#services-preview" class="nav-link" data-page="services">Services</a>
+                <a href="#cta-section" class="nav-link" data-page="contact">Contact</a>
             </nav>
 
             <div class="desktop-auth">
@@ -44,10 +50,10 @@
 
         <div id="mobile-menu" class="mobile-drawer hidden">
             <a href="#hero" data-page="home">Home</a>
-            <a href="#" data-page="features">Features</a>
-            <a href="#" data-page="why-us">Why Us</a>
-            <a href="#" data-page="services">Services</a>
-            <a href="#" data-page="contact">Contact</a>
+            <a href="#features-preview" data-page="features">Features</a>
+            <a href="#why-preview" data-page="why-us">Why Us</a>
+            <a href="#services-preview" data-page="services">Services</a>
+            <a href="#cta-section" data-page="contact">Contact</a>
             <div class="mobile-auth-wrapper">
                 <button class="btn-login-mobile" data-page="login">
                     <i class="fa-solid fa-right-to-bracket"></i> Login
@@ -641,7 +647,7 @@
         <div class="section-container footer-grid">
             <div class="footer-brand-column">
                 <div class="footer-logo">
-                    <a href="#" class="logo-wrapper" data-page="stackly">
+                    <a href="#hero" class="logo-wrapper">
                         <img src="photos/logo.webp" alt="Stackly Logo" class="footer-logo-img" />
                     </a>
                 </div>
