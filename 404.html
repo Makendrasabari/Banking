@@ -62,12 +62,29 @@
         </div>
         <h2 class="error-title">Page Not Found</h2>
         <p class="error-desc">Oops! The page you’re looking for doesn’t exist or has been moved.</p>
-        <button class="btn-error-home" onclick="window.location.href='index.html'">
+        <button class="btn-error-home" onclick="returnHome()">
             <i class="fa-solid fa-house"></i> Return Home
         </button>
     </section>
 
     <script>
+        function returnHome() {
+            sessionStorage.setItem('skipPreloader', 'true');
+            window.location.replace('index.html');
+        }
+
+        // Handle browser back / swipe-back gesture
+        try {
+            history.pushState({ page: '404' }, null, window.location.href);
+        } catch (e) {
+            console.warn('History pushState failed:', e);
+        }
+
+        window.addEventListener('popstate', function(event) {
+            sessionStorage.setItem('skipPreloader', 'true');
+            window.location.replace('index.html');
+        });
+
         // Replicate the particle generation from the original modal
         function spawnParticles() {
             const container = document.getElementById('error-particles');

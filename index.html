@@ -12,6 +12,12 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="style.css">
+    <script>
+        if (sessionStorage.getItem('skipPreloader') === 'true' || window.location.search.includes('skipPreloader=true')) {
+            document.write('<style>#preloader { display: none !important; }</style>');
+            sessionStorage.removeItem('skipPreloader');
+        }
+    </script>
 </head>
 
 <body>
