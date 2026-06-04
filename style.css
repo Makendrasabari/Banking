@@ -486,6 +486,33 @@ body.no-scroll {
     box-shadow: 0 4px 15px rgba(91, 181, 181, 0.2);
 }
 
+/* Signup button styled similarly */
+.btn-signup {
+    background: linear-gradient(135deg, rgba(91, 181, 181, 0.15) 0%, rgba(44, 95, 124, 0.15) 100%);
+    border: 1px solid rgba(91, 181, 181, 0.3);
+    color: #5BB5B5;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0.6rem 1.5rem;
+    border-radius: 0.6rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Inter', sans-serif;
+    text-decoration: none;
+    margin-left: 0.5rem; /* Added spacing between login and signup */
+}
+
+.btn-signup:hover {
+    background: linear-gradient(135deg, rgba(91, 181, 181, 0.25) 0%, rgba(44, 95, 124, 0.25) 100%);
+    border-color: #5BB5B5;
+    color: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(91, 181, 181, 0.2);
+}
+
 .mobile-menu-toggle {
     display: none;
     background: transparent;
