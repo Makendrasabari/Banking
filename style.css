@@ -502,7 +502,7 @@ body.no-scroll {
     gap: 0.5rem;
     font-family: 'Inter', sans-serif;
     text-decoration: none;
-    margin-left: 0.5rem; /* Added spacing between login and signup */
+    margin-left: 0.75rem; /* Gap between login and signup */
 }
 
 .btn-signup:hover {
@@ -510,7 +510,6 @@ body.no-scroll {
     border-color: #5BB5B5;
     color: #ffffff;
     transform: translateY(-1px);
-    box-shadow: 0 4px 15px rgba(91, 181, 181, 0.2);
 }
 
 .mobile-menu-toggle {
