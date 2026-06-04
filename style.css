@@ -553,7 +553,7 @@ body.no-scroll {
     pointer-events: none;
 }
 
-.mobile-drawer a {
+.mobile-drawer a:not(.btn-login):not(.btn-login-mobile) {
     color: var(--text-secondary);
     text-decoration: none;
     font-size: 1.5rem;
@@ -565,7 +565,7 @@ body.no-scroll {
     text-align: center;
 }
 
-.mobile-drawer a:hover {
+.mobile-drawer a:not(.btn-login):not(.btn-login-mobile):hover {
     background: rgba(91, 181, 181, 0.1);
     color: #5BB5B5;
     transform: scale(1.05);
@@ -1400,7 +1400,7 @@ body.no-scroll {
     position: relative;
     z-index: 2;
     width: 100%;
-    max-width: 440px;
+    max-width: 340px;
 }
 
 .hero-img.live-photo {
@@ -2598,7 +2598,7 @@ body.no-scroll {
     }
 
     .live-photo-container {
-        max-width: 380px;
+        max-width: 300px;
     }
 
     .grid-3col {
@@ -2656,7 +2656,7 @@ body.no-scroll {
     }
 
     .live-photo-container {
-        max-width: 360px;
+        max-width: 280px;
         margin: 0 auto;
     }
 
@@ -2971,7 +2971,8 @@ i.fa-regular,
 
 /* Buttons - Icon Translation/Rotation Hover effects */
 .btn-login:hover i,
-.btn-login-mobile:hover i {
+.btn-login-mobile:hover i,
+.btn-signup:hover i {
     transform: translateX(3px) scale(1.05);
 }
 
